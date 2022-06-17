@@ -1,0 +1,15 @@
+# Directories
+**/bin/
+bin-int/
+
+# Visual studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+## Local 
+build/**/*
+lib/*
+bin/*
