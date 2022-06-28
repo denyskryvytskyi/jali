@@ -1,18 +1,25 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(jali
-        VERSION 1.0
-        LANGUAGES CXX)
+option(JALI_BUILD_RELEASE "release build for end user" OFF)
 
 set(JALI_HEADERS
-    "Test.h"
+    "jlpch.h"
+    "Scanner.h"
+    "ErrorHandler.h"
+    "Literal.h"
 )
 
 set(JALI_SOURCES
-    "main.cpp"
+    "Scanner.cpp"
+    "ErrorHandler.cpp"
+    "Literal.cpp"
 )
 
 source_group("Header Files" FILES ${JALI_HEADERS})
 source_group("Source Files" FILES ${JALI_SOURCES})
 
-add_executable(jali ${JALI_HEADERS} ${JALI_SOURCES})
+add_library(jali_static STATIC ${JALI_HEADERS} ${JALI_SOURCES})
+
+target_include_directories(jali_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_precompile_headers(jali_static PRIVATE "jlpch.h")
