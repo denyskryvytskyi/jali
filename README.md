@@ -1,5 +1,5 @@
 # JALI - Just Another Lox Implementation
-
+[![build](https://github.com/denyskryvytskyi/jali/actions/workflows/cmake.yml/badge.svg?branch=master)](https://github.com/denyskryvytskyi/jali/actions/workflows/cmake.yml)
 
 C++ implementation of the Lox programming language following Bob Nystrom's book [Crafting Interpreters](http://www.craftinginterpreters.com/).
 
